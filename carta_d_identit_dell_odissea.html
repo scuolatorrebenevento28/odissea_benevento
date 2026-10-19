@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Carta d'Identità dei Personaggi dell'Odissea</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome per icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Cinzel per i titoli in stile classico e Inter per il testo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        greek: {
+                            terracotta: '#C85A32',
+                            terracottaDark: '#9E3F1B',
+                            aegean: '#1B4965',
+                            aegeanLight: '#2B6888',
+                            gold: '#D4AF37',
+                            goldHover: '#B59226',
+                            parchment: '#F9F6EE',
+                            parchmentDark: '#EFE2C9',
+                            bronze: '#8C6239',
+                            darkText: '#2C221E'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'greek-pattern': "url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" viewBox=\"0 0 40 40\"><path d=\"M0 0h40v40H0z\" fill=\"none\"/><path d=\"M0 0v10h10V0H0zm8 8H2V2h6v6zM0 12v10h10V12H0zm8 8H2v-6h6v6zM0 24v10h10V24H0zm8 8H2v-6h6v6zM0 36v4h4v-4H0zm12-36v10h10V0H12zm8 8h-6V2h6v6zm-8 4v10h10V12H12zm8 8h-6v-6h6v6zm-8 4v10h10V24H12zm8 8h-6v-6h6v6zm-8 4v4h4v-4h-4zM24 0v10h10V0H24zm8 8h-6V2h6v6zm-8 4v10h10V12H24zm8 8h-6v-6h6v6zm-8 4v10h10V24H24zm8 8h-6v-6h6v6zm-8 4v4h4v-4h-4zm12-36v10h4V0h-4zm2 8h-2V2h2v6zm-2 4v10h4V12h-4zm2 8h-2v-6h2v6zm-2 4v10h4V24h-4zm2 8h-2v-6h2v6zm-2 4v4h4v-4h-4z\" fill=\"%23D4AF37\" fill-opacity=\"0.08\"/></svg>')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* CSS Personalizzato */
+        body {
+            background-color: #121A21;
+            color: #2C221E;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Effetto Cornice Greca Meandro */
+        .greek-border {
+            border: 4px solid #D4AF37;
+            position: relative;
+        }
+        .greek-border::before {
+            content: '';
+            position: absolute;
+            top: -8px; left: -8px; right: -8px; bottom: -8px;
+            border: 1px solid #C85A32;
+            pointer-events: none;
+        }
+
+        /* Pergamena styling */
+        .parchment-card {
+            background: linear-gradient(135deg, #F9F6EE 0%, #EFE2C9 100%);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5), inset 0 0 40px rgba(140, 98, 57, 0.2);
+        }
+
+        /* Flip Card Animation */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        .transform-style-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+
+        /* Stampa */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-only {
+                display: block !important;
+            }
+            .card-to-print {
+                box-shadow: none !important;
+                break-inside: avoid;
+                page-break-inside: avoid;
+                margin: 0 auto !important;
+                width: 100% !important;
+                max-width: 450px !important;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 bg-greek-pattern flex flex-col justify-between">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="bg-greek-aegean/90 backdrop-blur border-b-2 border-greek-gold sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-greek-gold rounded-full flex items-center justify-center text-greek-aegean font-serif font-black text-2xl border-2 border-greek-parchment shadow">
+                    Ω
+                </div>
+                <div>
+                    <h1 class="font-serif text-xl sm:text-2xl font-bold tracking-wide text-greek-parchment uppercase">
+                        Carte d'Identità dell'Odissea
+                    </h1>
+                    <p class="text-xs text-greek-gold font-medium hidden sm:block">Laboratorio Didattico Interattivo</p>
+                </div>
+            </div>
+
+            <!-- Tab Buttons -->
+            <nav class="flex gap-2 sm:gap-4 no-print">
+                <button onclick="switchTab('gallery')" id="nav-gallery" class="px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-serif font-semibold text-sm transition-all flex items-center gap-2 bg-greek-gold text-greek-aegean shadow-md">
+                    <i class="fa-solid fa-address-card"></i>
+                    <span class="hidden md:inline">Galleria</span>
+                </button>
+                <button onclick="switchTab('creator')" id="nav-creator" class="px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-serif font-semibold text-sm transition-all flex items-center gap-2 bg-greek-aegeanLight/60 text-greek-parchment hover:bg-greek-aegeanLight">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span class="hidden md:inline">Crea Carta</span>
+                </button>
+                <button onclick="switchTab('quiz')" id="nav-quiz" class="px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-serif font-semibold text-sm transition-all flex items-center gap-2 bg-greek-aegeanLight/60 text-greek-parchment hover:bg-greek-aegeanLight">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span class="hidden md:inline">Sfida Mito</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINERS -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+
+        <!-- ================= TAB 1: GALLERIA CARTE ================= -->
+        <section id="tab-gallery" class="space-y-6">
+            <!-- Intro Banner -->
+            <div class="bg-greek-terracotta/20 border-2 border-greek-terracotta/50 rounded-2xl p-6 text-greek-parchment flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="space-y-2">
+                    <h2 class="font-serif text-2xl font-bold text-greek-gold flex items-center gap-2">
+                        <i class="fa-solid fa-scroll"></i>
+                        Esplora i Personaggi Epici
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-200 max-w-2xl">
+                        Seleziona un personaggio dell'Odissea per visualizzare la sua carta d'identità con tratti distintivi, punti forza, astuzia e citazioni celebri. Puoi modificarla o stamparla per i tuoi cartoncini didattici!
+                    </p>
+                </div>
+                <div class="flex gap-3 shrink-0">
+                    <button onclick="openPrintModal()" class="bg-greek-gold hover:bg-greek-goldHover text-slate-950 font-bold px-4 py-2.5 rounded-lg font-serif shadow-md text-sm flex items-center gap-2 transition">
+                        <i class="fa-solid fa-print"></i> Stampa Carte
+                    </button>
+                </div>
+            </div>
+
+            <!-- Character Filter/Search -->
+            <div class="flex flex-col sm:flex-row gap-4 items-center justify-between bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+                <div class="relative w-full sm:w-72">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="search-input" oninput="filterCards()" placeholder="Cerca personaggio..." class="w-full bg-slate-800 text-white pl-10 pr-4 py-2 rounded-lg border border-slate-700 focus:outline-none focus:border-greek-gold text-sm">
+                </div>
+                <div class="flex gap-2 w-full sm:w-auto overflow-x-auto pb-2 sm:pb-0">
+                    <button onclick="filterCategory('all')" class="cat-btn active px-3 py-1.5 rounded-md text-xs font-semibold bg-greek-gold text-slate-950">Tutti</button>
+                    <button onclick="filterCategory('eroi')" class="cat-btn px-3 py-1.5 rounded-md text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700">Eroi & Mortali</button>
+                    <button onclick="filterCategory('dei')" class="cat-btn px-3 py-1.5 rounded-md text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700">Dei & Creature</button>
+                    <button onclick="filterCategory('custom')" class="cat-btn px-3 py-1.5 rounded-md text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700">Creati da te</button>
+                </div>
+            </div>
+
+            <!-- Cards Grid -->
+            <div id="cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Cards inject here via JS -->
+            </div>
+        </section>
+
+        <!-- ================= TAB 2: CREATORE / EDITOR CARTA ================= -->
+        <section id="tab-creator" class="hidden space-y-6">
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8">
+                <h2 id="creator-title" class="font-serif text-2xl sm:text-3xl font-bold text-greek-gold mb-2 flex items-center gap-3">
+                    <i class="fa-solid fa-pen-ruler"></i> Crea una Nuova Carta d'Identità
+                </h2>
+                <p class="text-slate-400 text-sm mb-6">Compila i dettagli e definisci i tratti distintivi del personaggio dell'Odissea.</p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <!-- Form Inputs (7 cols) -->
+                    <form id="card-form" onsubmit="handleSaveCard(event)" class="lg:col-span-7 space-y-4">
+                        <input type="hidden" id="card-id" value="">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-greek-gold mb-1">Nome Personaggio *</label>
+                                <input type="text" id="input-name" required placeholder="Es. Telemaco" class="w-full bg-slate-800 text-slate-100 px-3 py-2 rounded-lg border border-slate-700 focus:outline-none focus:border-greek-gold text-sm" oninput="updatePreview()">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-greek-gold mb-1">Ruolo / Titolo *</label>
+                                <input type="text" id="input-role" required placeholder="Es. Principe di Itaca" class="w-full bg-slate-800 text-slate-100 px-3 py-2 rounded-lg border border-slate-700 focus:outline-none focus:border-greek-gold text-sm" oninput="updatePreview()">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-greek-gold mb-1">Categoria</label>
+                                <select id="input-category" class="w-full bg-slate-800 text-slate-100 px-3 py-2 rounded-lg border border-slate-700 focus:outline-none focus:border-greek-gold text-sm">
+                                    <option value="eroi">Eroe / Mortale</option>
+                                    <option value="dei">Divinità / Creatura Mitologica</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-greek-gold mb-1">Tratto Distintivo Principale *</label>
+                                <input type="text" id="input-trait" required placeholder="Es. Astuzia / Coraggio / Lealtà" class="w-full bg-slate-800 text-slate-100 px-3 py-2 rounded-lg border border-slate-700 focus:outline-none focus:border-greek-gold text-sm" oninput="updatePreview()">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-greek-gold mb-1">Caratteristiche Fisiche & Aspetto *</label>
+                            <textarea id="input-physical" required rows="2" placeholder="Es. Sguardo fiero, chioma bionda, corporatura atletica..." class="w-full bg-slate-800 text-slate-100 px-3 py-2 rounded-lg border border-slate-700 focus:outline-none focus:border-greek-gold text-sm" oninput="updatePreview()"></textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-greek-gold mb-1">Descrizione & Storia in Breve *</label>
+                            <textarea id="input-desc" required rows="3" placeholder="Descrivi brevemente chi è e la sua importanza nel viaggio di Ulisse..." class="w-full bg-slate-800 text-slate-100 px-3 py-2 rounded-lg border border-slate-700 focus:outline-none focus:border-greek-gold text-sm" oninput="updatePreview()"></textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-greek-gold mb-1">Citazione o Messa a Fuoco</label>
+                            <input type="text" id="input-quote" placeholder="Es. 'Mostrami la via della gloria...'" class="w-full bg-slate-800 text-slate-100 px-3 py-2 rounded-lg border border-slate-700 focus:outline-none focus:border-greek-gold text-sm" oninput="updatePreview()">
+                        </div>
+
+                        <!-- STATS SLIDERS -->
+                        <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700 space-y-3">
+                            <span class="block text-xs font-bold uppercase text-greek-gold">Punteggi Abilità (1 - 100)</span>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <div class="flex justify-between text-xs text-slate-300 mb-1">
+                                        <span><i class="fa-solid fa-brain text-amber-400 mr-1"></i> Astuzia / Ingegno:</span>
+                                        <span id="val-astuzia" class="font-bold">75</span>
+                                    </div>
+                                    <input type="range" id="input-astuzia" min="10" max="100" value="75" class="w-full accent-greek-gold" oninput="updateStatVal('astuzia'); updatePreview();">
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs text-slate-300 mb-1">
+                                        <span><i class="fa-solid fa-hand-fist text-red-400 mr-1"></i> Forza / Potenza:</span>
+                                        <span id="val-forza" class="font-bold">60</span>
+                                    </div>
+                                    <input type="range" id="input-forza" min="10" max="100" value="60" class="w-full accent-red-500" oninput="updateStatVal('forza'); updatePreview();">
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs text-slate-300 mb-1">
+                                        <span><i class="fa-solid fa-heart text-emerald-400 mr-1"></i> Lealtà / Virtù:</span>
+                                        <span id="val-lealta" class="font-bold">85</span>
+                                    </div>
+                                    <input type="range" id="input-lealta" min="10" max="100" value="85" class="w-full accent-emerald-500" oninput="updateStatVal('lealta'); updatePreview();">
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs text-slate-300 mb-1">
+                                        <span><i class="fa-solid fa-wand-magic-sparkles text-purple-400 mr-1"></i> Magia / Fato:</span>
+                                        <span id="val-magia" class="font-bold">20</span>
+                                    </div>
+                                    <input type="range" id="input-magia" min="10" max="100" value="20" class="w-full accent-purple-500" oninput="updateStatVal('magia'); updatePreview();">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AVATAR GENERATOR SELECTION -->
+                        <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700 space-y-3">
+                            <span class="block text-xs font-bold uppercase text-greek-gold">Scegli Illustrazione Avatar</span>
+                            <div class="grid grid-cols-4 sm:grid-cols-6 gap-2" id="avatar-selector">
+                                <!-- Avatar Options Injection -->
+                            </div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="flex gap-3 pt-2">
+                            <button type="submit" class="flex-1 bg-greek-gold hover:bg-greek-goldHover text-slate-950 font-serif font-bold py-3 rounded-lg shadow-md transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-floppy-disk"></i> Salva Carta
+                            </button>
+                            <button type="button" onclick="resetForm()" class="bg-slate-700 hover:bg-slate-600 text-slate-200 px-4 py-3 rounded-lg font-semibold transition">
+                                Annulla
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Live Preview Side (5 cols) -->
+                    <div class="lg:col-span-5 flex flex-col items-center">
+                        <span class="text-xs font-serif font-bold tracking-wider text-greek-gold uppercase mb-3 flex items-center gap-1">
+                            <i class="fa-solid fa-eye"></i> Anteprima in Tempo Reale
+                        </span>
+                        <div id="preview-card-container" class="w-full max-w-sm">
+                            <!-- Live Render Card -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 3: QUIZ / SFIDA MITO ================= -->
+        <section id="tab-quiz" class="hidden space-y-6">
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto text-center space-y-6">
+                <div class="inline-flex p-4 bg-greek-gold/10 text-greek-gold rounded-full mb-2">
+                    <i class="fa-solid fa-helmet-unables text-4xl"></i>
+                </div>
+                <h2 class="font-serif text-3xl font-bold text-greek-gold">Sfida del Labirinto Epico</h2>
+                <p class="text-slate-300 text-sm max-w-xl mx-auto">
+                    Metti alla prova le tue conoscenze sui personaggi dell'Odissea! Riconosci il personaggio dal suo tratto distintivo, dalla sua descrizione fisica o dalla sua citazione.
+                </p>
+
+                <!-- Quiz Box -->
+                <div id="quiz-box" class="bg-slate-800/80 border border-slate-700 rounded-xl p-6 text-left space-y-4 shadow-xl">
+                    <!-- Dynamic Quiz Content -->
+                </div>
+
+                <div class="flex justify-between items-center text-xs text-slate-400 font-semibold px-2">
+                    <span>Punteggio: <strong id="quiz-score" class="text-greek-gold text-sm">0</strong></span>
+                    <button onclick="initQuiz()" class="text-greek-gold hover:underline flex items-center gap-1">
+                        <i class="fa-solid fa-rotate-right"></i> Ricomincia Quiz
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODALE DI STAMPA MULTIPLA -->
+    <div id="print-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4 no-print">
+        <div class="bg-slate-900 border-2 border-greek-gold rounded-2xl max-w-2xl w-full p-6 text-slate-100 space-y-4">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                <h3 class="font-serif font-bold text-xl text-greek-gold flex items-center gap-2">
+                    <i class="fa-solid fa-print"></i> Prepara Schede per Stampa
+                </h3>
+                <button onclick="closePrintModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <p class="text-xs text-slate-300">
+                Seleziona le carte che desideri stampare sui tuoi cartoncini (4 carte per pagina o schede singole).
+            </p>
+            
+            <div id="print-selection-list" class="max-h-60 overflow-y-auto space-y-2 pr-2">
+                <!-- Checkbox list injects here -->
+            </div>
+
+            <div class="flex justify-end gap-3 pt-4 border-t border-slate-800">
+                <button onclick="closePrintModal()" class="px-4 py-2 rounded-lg text-slate-300 bg-slate-800 hover:bg-slate-700 text-sm">Annulla</button>
+                <button onclick="triggerPrint()" class="px-5 py-2 rounded-lg font-bold font-serif text-slate-950 bg-greek-gold hover:bg-greek-goldHover text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-print"></i> Avvia Stampa
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AREA STAMPA DEDICATA (Visibile solo durante la stampa) -->
+    <div id="print-container" class="hidden print-only bg-white p-4">
+        <div class="text-center mb-6">
+            <h1 class="text-2xl font-serif font-bold uppercase tracking-widest text-amber-900">Carte d'Identità dell'Odissea</h1>
+            <p class="text-xs text-slate-600">Attività Didattica - Cartoncini dei Personaggi</p>
+        </div>
+        <div id="print-cards-grid" class="grid grid-cols-2 gap-6">
+            <!-- Printed cards injected here -->
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800/80 py-6 text-center text-xs text-slate-500 font-medium no-print">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-3">
+            <p>© 2026 Odissea Interactive Lab — Gioco Educativo per Scuole e Didattica</p>
+            <p class="text-greek-gold/80">Ispirato al poema epico di Omero</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // DATASET INIZIALE PERSONAGGI DELL'ODISSEA
+        const defaultCharacters = [
+            {
+                id: "ulisse",
+                name: "Ulisse (Odisseo)",
+                role: "Re di Itaca & Mente Strategica",
+                category: "eroi",
+                trait: "Politropo (Multiforme Astuzia)",
+                physical: "Uomo vigoroso, barba folta, sguardo profondo e penetrante. Corpo segnato dalle battaglie e dal mare.",
+                description: "Progettò l'inganno del Cavallo di Troia. Vaga da dieci anni nei mari affrontando mostri e divinità per tornare nella sua amata patria Itaca.",
+                quote: "«Fatti non foste a viver come bruti, ma per seguir virtute e canoscenza.»",
+                astuzia: 98,
+                forza: 75,
+                lealta: 85,
+                magia: 15,
+                avatarSvg: 'ulisse'
+            },
+            {
+                id: "penelope",
+                name: "Penelope",
+                role: "Regina di Itaca",
+                category: "eroi",
+                trait: "Fedeltà Inviolabile & Ingegno",
+                physical: "Portamento regale, volto sereno ed elegante, mani esperte nell'arte della tessitura.",
+                description: "Attende con incrollabile fede il ritorno del marito Ulisse. Inganna i Proci con l'ingegnoso stratagemma della tela che tesse di giorno e disfa di notte.",
+                quote: "«Nessun uomo potrà mai prendere il posto di colui che possiede il mio cuore.»",
+                astuzia: 92,
+                forza: 45,
+                lealta: 100,
+                magia: 10,
+                avatarSvg: 'penelope'
+            },
+            {
+                id: "polifemo",
+                name: "Polifemo",
+                role: "Ciclope & Figlio di Poseidone",
+                category: "dei",
+                trait: "Forza Bruta e Titanica",
+                physical: "Gigante imponente con un solo grande occhio al centro della fronte. Voce cavernosa e forza sovrannaturale.",
+                description: "Pastore gigante che vive in una caverna in Sicilia. Imprigiona Ulisse ed i suoi compagni, ma viene accecato dall'astuzia dell'eroe che si fa chiamare 'Nessuno'.",
+                quote: "«Nessuno mi uccide con l'inganno e non con la forza!»",
+                astuzia: 20,
+                forza: 99,
+                lealta: 30,
+                magia: 40,
+                avatarSvg: 'polifemo'
+            },
+            {
+                id: "circe",
+                name: "Circe",
+                role: "Maga dell'Isola di Eea",
+                category: "dei",
+                trait: "Seduzione & Arti Magiche",
+                physical: "Capelli dorati intrecciati, occhi magnetici e scintillanti, veste fluida dal color dell'Oceano.",
+                description: "Ammaliatrice capace di trasformare gli uomini in animali selvatici tramite bevande incantate. Diventerà poi preziosa alleata e guida per Ulisse.",
+                quote: "«Bevi questo calice e scopri la tua vera natura animale...»",
+                astuzia: 85,
+                forza: 50,
+                lealta: 50,
+                magia: 98,
+                avatarSvg: 'circe'
+            },
+            {
+                id: "atena",
+                name: "Atena",
+                role: "Dea della Sapienza e della Guerra",
+                category: "dei",
+                trait: "Protezione Divina & Saggezza",
+                physical: "Elmo elenico dorato, lancia di bronzo, mantello divino ed occhio lucente come quello della civetta.",
+                description: "Protettrice di Ulisse e Telemaco. Interviene spesso sotto varie spoglie umane per guidare l'eroe itacese verso il suo riscatto e la vittoria finale.",
+                quote: "«L'astuzia abbinata al coraggio vincerà ogni sorte avversa.»",
+                astuzia: 100,
+                forza: 90,
+                lealta: 95,
+                magia: 95,
+                avatarSvg: 'atena'
+            },
+            {
+                id: "telemaco",
+                name: "Telemaco",
+                role: "Principe ed Erede di Itaca",
+                category: "eroi",
+                trait: "Coraggio Nascente & Determinazione",
+                physical: "Giovane forte, portamento fiero, somigliante al padre negli occhi calcolatori.",
+                description: "Partito alla ricerca di notizie del padre scomparso, matura diventando un forte guerriero pronto a combattere al fianco di Ulisse contro i Proci.",
+                quote: "«Non sono più il bambino indifeso che avete conosciuto.»",
+                astuzia: 70,
+                forza: 78,
+                lealta: 95,
+                magia: 0,
+                avatarSvg: 'telemaco'
+            }
+        ];
+
+        // SVGs GRAFICI AVATAR PERSONAGGI
+        const avatarSvgs = {
+            ulisse: `<svg viewBox="0 0 100 100" class="w-full h-full">
+                <circle cx="50" cy="50" r="46" fill="#1B4965" stroke="#D4AF37" stroke-width="3"/>
+                <path d="M25 75 Q50 60 75 75 V90 H25 Z" fill="#C85A32"/>
+                <circle cx="50" cy="45" r="20" fill="#EFE2C9"/>
+                <!-- Barba e Capelli -->
+                <path d="M30 40 C30 25 70 25 70 40 C70 30 30 30 30 40 Z" fill="#8C6239"/>
+                <path d="M32 48 C32 68 68 68 68 48 C60 62 40 62 32 48 Z" fill="#8C6239"/>
+                <!-- Occhi e Baffi -->
+                <circle cx="43" cy="42" r="2.5" fill="#2C221E"/>
+                <circle cx="57" cy="42" r="2.5" fill="#2C221E"/>
+                <path d="M40 50 Q50 56 60 50" stroke="#8C6239" stroke-width="2" fill="none"/>
+                <!-- Benda/Copricapo Nautico -->
+                <path d="M30 32 Q50 20 70 32 L68 25 Q50 18 32 25 Z" fill="#D4AF37"/>
+            </svg>`,
+            penelope: `<svg viewBox="0 0 100 100" class="w-full h-full">
+                <circle cx="50" cy="50" r="46" fill="#2B6888" stroke="#D4AF37" stroke-width="3"/>
+                <path d="M25 80 Q50 65 75 80 V90 H25 Z" fill="#D4AF37"/>
+                <circle cx="50" cy="45" r="19" fill="#F9F6EE"/>
+                <!-- Capelli Lunghi Regali -->
+                <path d="M28 40 C25 65 35 75 35 75 C35 75 30 45 35 35 C40 20 60 20 65 35 C70 45 65 75 65 75 C65 75 75 65 72 40 C70 25 30 25 28 40 Z" fill="#8C6239"/>
+                <!-- Tiara Greca -->
+                <path d="M36 30 L50 22 L64 30 L50 26 Z" fill="#D4AF37"/>
+                <!-- Volto -->
+                <circle cx="44" cy="44" r="2" fill="#2C221E"/>
+                <circle cx="56" cy="44" r="2" fill="#2C221E"/>
+                <path d="M45 53 Q50 56 55 53" stroke="#C85A32" stroke-width="2" fill="none"/>
+            </svg>`,
+            polifemo: `<svg viewBox="0 0 100 100" class="w-full h-full">
+                <circle cx="50" cy="50" r="46" fill="#4A2810" stroke="#C85A32" stroke-width="3"/>
+                <path d="M20 85 Q50 60 80 85 V90 H20 Z" fill="#8C6239"/>
+                <!-- Testa gigante -->
+                <circle cx="50" cy="45" r="24" fill="#D8B89C"/>
+                <!-- Occhio Unico Monocolo -->
+                <circle cx="50" cy="40" r="7" fill="#FFF"/>
+                <circle cx="50" cy="40" r="3.5" fill="#C85A32"/>
+                <circle cx="51" cy="39" r="1" fill="#FFF"/>
+                <!-- Orecchie appuntite e Zanne -->
+                <path d="M42 58 L45 52 L48 58 Z" fill="#FFF"/>
+                <path d="M52 58 L55 52 L58 58 Z" fill="#FFF"/>
+                <path d="M35 55 Q50 62 65 55" stroke="#2C221E" stroke-width="3" fill="none"/>
+                <!-- Capelli selvaggi -->
+                <path d="M24 35 Q50 10 76 35 Q65 20 50 22 Q35 20 24 35 Z" fill="#2C221E"/>
+            </svg>`,
+            circe: `<svg viewBox="0 0 100 100" class="w-full h-full">
+                <circle cx="50" cy="50" r="46" fill="#3B1F47" stroke="#D4AF37" stroke-width="3"/>
+                <path d="M25 80 Q50 65 75 80 V90 H25 Z" fill="#6B21A8"/>
+                <circle cx="50" cy="45" r="18" fill="#F9F6EE"/>
+                <!-- Chioma Magica Viola/Nera -->
+                <path d="M25 35 C20 60 30 75 30 75 C40 45 35 30 50 22 C65 30 60 45 70 75 C70 75 80 60 75 35 C70 20 30 20 25 35 Z" fill="#1E1B4B"/>
+                <!-- Diadema della Maga -->
+                <circle cx="50" cy="27" r="4" fill="#D4AF37"/>
+                <path d="M40 30 L50 25 L60 30" stroke="#D4AF37" stroke-width="2" fill="none"/>
+                <!-- Volto e trucco -->
+                <circle cx="44" cy="43" r="2" fill="#D4AF37"/>
+                <circle cx="56" cy="43" r="2" fill="#D4AF37"/>
+                <path d="M45 52 Q50 56 55 52" stroke="#9333EA" stroke-width="2" fill="none"/>
+            </svg>`,
+            atena: `<svg viewBox="0 0 100 100" class="w-full h-full">
+                <circle cx="50" cy="50" r="46" fill="#1E3A8A" stroke="#D4AF37" stroke-width="3"/>
+                <path d="M25 80 Q50 65 75 80 V90 H25 Z" fill="#D4AF37"/>
+                <circle cx="50" cy="48" r="18" fill="#F9F6EE"/>
+                <!-- Elmo Greco Corinthian -->
+                <path d="M28 42 L50 15 L72 42 L68 25 L50 20 L32 25 Z" fill="#D4AF37"/>
+                <path d="M50 10 L54 22 L46 22 Z" fill="#C85A32"/>
+                <path d="M42 35 L58 35 L55 46 L45 46 Z" fill="#B59226"/>
+                <!-- Volto Divino -->
+                <circle cx="44" cy="48" r="2" fill="#1E3A8A"/>
+                <circle cx="56" cy="48" r="2" fill="#1E3A8A"/>
+                <path d="M46 56 Q50 58 54 56" stroke="#C85A32" stroke-width="1.5" fill="none"/>
+            </svg>`,
+            telemaco: `<svg viewBox="0 0 100 100" class="w-full h-full">
+                <circle cx="50" cy="50" r="46" fill="#2B6888" stroke="#C85A32" stroke-width="3"/>
+                <path d="M25 78 Q50 65 75 78 V90 H25 Z" fill="#1B4965"/>
+                <circle cx="50" cy="45" r="19" fill="#EFE2C9"/>
+                <!-- Capelli Corti e Giovani -->
+                <path d="M30 38 C32 25 68 25 70 38 C65 28 35 28 30 38 Z" fill="#5C3D2E"/>
+                <!-- Volto Giovane -->
+                <circle cx="43" cy="43" r="2.5" fill="#2C221E"/>
+                <circle cx="57" cy="43" r="2.5" fill="#2C221E"/>
+                <path d="M44 52 Q50 56 56 52" stroke="#C85A32" stroke-width="2" fill="none"/>
+                <path d="M35 30 Q50 25 65 30" stroke="#D4AF37" stroke-width="3" fill="none"/>
+            </svg>`
+        };
+
+        // GLOBAL APP STATE
+        let characters = [];
+        let activeCategory = 'all';
+        let currentEditingId = null;
+
+        // INITIALIZATION
+        window.onload = function() {
+            // Load saved characters from LocalStorage or use defaults
+            const saved = localStorage.getItem('odyssey_cards');
+            if (saved) {
+                try {
+                    characters = JSON.parse(saved);
+                } catch(e) {
+                    characters = [...defaultCharacters];
+                }
+            } else {
+                characters = [...defaultCharacters];
+                saveToLocalStorage();
+            }
+
+            renderGallery();
+            setupAvatarSelector();
+            updatePreview();
+            initQuiz();
+        };
+
+        function saveToLocalStorage() {
+            localStorage.setItem('odyssey_cards', JSON.stringify(characters));
+        }
+
+        // TABS NAVIGATION
+        function switchTab(tabName) {
+            document.getElementById('tab-gallery').classList.add('hidden');
+            document.getElementById('tab-creator').classList.add('hidden');
+            document.getElementById('tab-quiz').classList.add('hidden');
+
+            document.getElementById('nav-gallery').className = "px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-serif font-semibold text-sm transition-all flex items-center gap-2 bg-greek-aegeanLight/60 text-greek-parchment hover:bg-greek-aegeanLight";
+            document.getElementById('nav-creator').className = "px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-serif font-semibold text-sm transition-all flex items-center gap-2 bg-greek-aegeanLight/60 text-greek-parchment hover:bg-greek-aegeanLight";
+            document.getElementById('nav-quiz').className = "px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-serif font-semibold text-sm transition-all flex items-center gap-2 bg-greek-aegeanLight/60 text-greek-parchment hover:bg-greek-aegeanLight";
+
+            document.getElementById('tab-' + tabName).classList.remove('hidden');
+            const activeNav = document.getElementById('nav-' + tabName);
+            activeNav.className = "px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-serif font-semibold text-sm transition-all flex items-center gap-2 bg-greek-gold text-greek-aegean shadow-md font-bold";
+        }
+
+        // RENDER CARDS IN GALLERY
+        function renderGallery() {
+            const grid = document.getElementById('cards-grid');
+            grid.innerHTML = '';
+
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+
+            const filtered = characters.filter(c => {
+                const matchesCategory = (activeCategory === 'all') || 
+                                        (activeCategory === 'custom' && c.isCustom) || 
+                                        (c.category === activeCategory);
+                const matchesSearch = c.name.toLowerCase().includes(searchTerm) || 
+                                      c.trait.toLowerCase().includes(searchTerm) ||
+                                      c.role.toLowerCase().includes(searchTerm);
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 bg-slate-900/50 rounded-2xl border border-slate-800">
+                        <i class="fa-solid fa-scroll text-4xl text-slate-600 mb-3"></i>
+                        <p class="text-slate-400 font-serif text-lg">Nessun personaggio trovato.</p>
+                        <button onclick="resetFilters()" class="mt-3 text-xs text-greek-gold underline">Azzera filtri</button>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(char => {
+                const cardHtml = createCardElementHtml(char, false);
+                grid.appendChild(cardHtml);
+            });
+        }
+
+        // CREATE HTML DOM FOR CARD
+        function createCardElementHtml(char, isPreview = false) {
+            const wrapper = document.createElement('div');
+            wrapper.className = "perspective-1000 w-full";
+
+            const svgContent = avatarSvgs[char.avatarSvg] || avatarSvgs['ulisse'];
+
+            wrapper.innerHTML = `
+                <div class="parchment-card rounded-2xl p-5 border-4 border-greek-gold shadow-2xl relative text-greek-darkText flex flex-col justify-between transition-all hover:scale-[1.02]">
+                    <!-- Meandro Border Decor Top -->
+                    <div class="flex justify-between items-center border-b-2 border-greek-bronze/40 pb-2 mb-3">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-greek-terracottaDark font-serif">Odissea - Carta d'Identità</span>
+                        <span class="text-xs font-serif font-bold px-2 py-0.5 bg-greek-terracotta/20 rounded border border-greek-terracottaDark/30 text-greek-terracottaDark">${char.category === 'dei' ? 'Divinità/Creatura' : 'Eroe/Mortale'}</span>
+                    </div>
+
+                    <!-- Header: Avatar + Info Base -->
+                    <div class="flex gap-4 items-center mb-4">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 shrink-0 rounded-full bg-slate-900 border-2 border-greek-gold overflow-hidden shadow-inner flex items-center justify-center">
+                            ${svgContent}
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-serif font-black text-xl sm:text-2xl text-greek-terracottaDark leading-tight">${char.name}</h3>
+                            <p class="text-xs font-bold text-greek-aegean uppercase tracking-wide">${char.role}</p>
+                            <div class="inline-block bg-greek-gold/30 px-2 py-0.5 rounded text-[11px] font-semibold text-greek-darkText border border-greek-gold">
+                                <i class="fa-solid fa-star text-greek-terracotta text-[10px] mr-1"></i> Tratto: <strong>${char.trait}</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Caratteristiche Fisiche -->
+                    <div class="bg-white/60 p-2.5 rounded-lg border border-greek-bronze/20 text-xs mb-3 space-y-1">
+                        <span class="font-bold text-greek-terracottaDark uppercase text-[10px] block">Aspetto & Fisico:</span>
+                        <p class="italic text-slate-800 leading-snug">${char.physical}</p>
+                    </div>
+
+                    <!-- Descrizione Breve -->
+                    <div class="text-xs text-slate-800 mb-4 leading-relaxed line-clamp-3">
+                        ${char.description}
+                    </div>
+
+                    <!-- Citazione -->
+                    ${char.quote ? `
+                        <div class="text-center font-serif italic text-xs text-greek-aegean font-semibold bg-greek-aegean/5 p-2 rounded border-l-2 border-greek-aegean mb-4">
+                            ${char.quote}
+                        </div>
+                    ` : ''}
+
+                    <!-- STATS BARS -->
+                    <div class="space-y-1.5 bg-black/5 p-3 rounded-lg border border-greek-bronze/20 mb-4">
+                        <div class="flex items-center text-[11px] font-bold">
+                            <span class="w-24 text-amber-900"><i class="fa-solid fa-brain mr-1 text-amber-700"></i> Astuzia:</span>
+                            <div class="flex-grow bg-slate-300 h-2 rounded-full overflow-hidden">
+                                <div class="bg-amber-600 h-full rounded-full" style="width: ${char.astuzia}%"></div>
+                            </div>
+                            <span class="w-8 text-right text-xs">${char.astuzia}</span>
+                        </div>
+                        <div class="flex items-center text-[11px] font-bold">
+                            <span class="w-24 text-red-900"><i class="fa-solid fa-hand-fist mr-1 text-red-700"></i> Forza:</span>
+                            <div class="flex-grow bg-slate-300 h-2 rounded-full overflow-hidden">
+                                <div class="bg-red-600 h-full rounded-full" style="width: ${char.forza}%"></div>
+                            </div>
+                            <span class="w-8 text-right text-xs">${char.forza}</span>
+                        </div>
+                        <div class="flex items-center text-[11px] font-bold">
+                            <span class="w-24 text-emerald-900"><i class="fa-solid fa-heart mr-1 text-emerald-700"></i> Lealtà:</span>
+                            <div class="flex-grow bg-slate-300 h-2 rounded-full overflow-hidden">
+                                <div class="bg-emerald-600 h-full rounded-full" style="width: ${char.lealta}%"></div>
+                            </div>
+                            <span class="w-8 text-right text-xs">${char.lealta}</span>
+                        </div>
+                    </div>
+
+                    <!-- Card Actions (Hidden in preview) -->
+                    ${!isPreview ? `
+                        <div class="flex gap-2 pt-2 border-t border-greek-bronze/30 no-print">
+                            <button onclick="editCard('${char.id}')" class="flex-1 bg-greek-aegean hover:bg-greek-aegeanLight text-white py-1.5 px-3 rounded text-xs font-semibold flex items-center justify-center gap-1 transition">
+                                <i class="fa-solid fa-pen"></i> Modifica
+                            </button>
+                            <button onclick="quickPrintCard('${char.id}')" class="bg-greek-gold hover:bg-greek-goldHover text-slate-950 py-1.5 px-3 rounded text-xs font-bold flex items-center justify-center gap-1 transition">
+                                <i class="fa-solid fa-print"></i> Stampa
+                            </button>
+                            ${char.isCustom ? `
+                                <button onclick="deleteCard('${char.id}')" class="bg-red-800 hover:bg-red-700 text-white py-1.5 px-2.5 rounded text-xs transition" title="Elimina">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            ` : ''}
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+            return wrapper;
+        }
+
+        // AVATAR SELECTOR SETUP
+        function setupAvatarSelector() {
+            const container = document.getElementById('avatar-selector');
+            container.innerHTML = '';
+
+            Object.keys(avatarSvgs).forEach((key, idx) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = `p-1.5 rounded-lg border-2 transition ${idx === 0 ? 'border-greek-gold bg-greek-gold/20' : 'border-slate-700 bg-slate-800 hover:border-slate-500'}`;
+                btn.onclick = () => selectAvatar(key, btn);
+                btn.innerHTML = `<div class="w-10 h-10">${avatarSvgs[key]}</div>`;
+                btn.dataset.avatarKey = key;
+                container.appendChild(btn);
+            });
+        }
+
+        let selectedAvatarKey = 'ulisse';
+
+        function selectAvatar(key, btnEl) {
+            selectedAvatarKey = key;
+            const allBtns = document.getElementById('avatar-selector').children;
+            for (let b of allBtns) {
+                b.className = 'p-1.5 rounded-lg border-2 border-slate-700 bg-slate-800 hover:border-slate-500 transition';
+            }
+            btnEl.className = 'p-1.5 rounded-lg border-2 border-greek-gold bg-greek-gold/20 transition';
+            updatePreview();
+        }
+
+        // STATS SLIDER VALUES UPDATE
+        function updateStatVal(statName) {
+            const val = document.getElementById('input-' + statName).value;
+            document.getElementById('val-' + statName).innerText = val;
+        }
+
+        // UPDATE LIVE PREVIEW
+        function updatePreview() {
+            const previewContainer = document.getElementById('preview-card-container');
+            
+            const dummyChar = {
+                id: 'preview',
+                name: document.getElementById('input-name').value || 'Nome Personaggio',
+                role: document.getElementById('input-role').value || 'Ruolo / Titolo Epico',
+                category: document.getElementById('input-category').value,
+                trait: document.getElementById('input-trait').value || 'Tratto Distintivo',
+                physical: document.getElementById('input-physical').value || 'Descrizione delle caratteristiche fisiche del personaggio...',
+                description: document.getElementById('input-desc').value || 'Storia breve del personaggio nell\'Odissea...',
+                quote: document.getElementById('input-quote').value || 'Citazione celebre...',
+                astuzia: parseInt(document.getElementById('input-astuzia').value),
+                forza: parseInt(document.getElementById('input-forza').value),
+                lealta: parseInt(document.getElementById('input-lealta').value),
+                magia: parseInt(document.getElementById('input-magia').value),
+                avatarSvg: selectedAvatarKey
+            };
+
+            previewContainer.innerHTML = '';
+            previewContainer.appendChild(createCardElementHtml(dummyChar, true));
+        }
+
+        // SAVE OR UPDATE CARD
+        function handleSaveCard(event) {
+            event.preventDefault();
+
+            const cardId = document.getElementById('card-id').value || 'custom_' + Date.now();
+            const existingIdx = characters.findIndex(c => c.id === cardId);
+
+            const newCard = {
+                id: cardId,
+                name: document.getElementById('input-name').value,
+                role: document.getElementById('input-role').value,
+                category: document.getElementById('input-category').value,
+                trait: document.getElementById('input-trait').value,
+                physical: document.getElementById('input-physical').value,
+                description: document.getElementById('input-desc').value,
+                quote: document.getElementById('input-quote').value,
+                astuzia: parseInt(document.getElementById('input-astuzia').value),
+                forza: parseInt(document.getElementById('input-forza').value),
+                lealta: parseInt(document.getElementById('input-lealta').value),
+                magia: parseInt(document.getElementById('input-magia').value),
+                avatarSvg: selectedAvatarKey,
+                isCustom: true
+            };
+
+            if (existingIdx >= 0) {
+                characters[existingIdx] = newCard;
+            } else {
+                characters.push(newCard);
+            }
+
+            saveToLocalStorage();
+            renderGallery();
+            resetForm();
+            switchTab('gallery');
+        }
+
+        // EDIT CARD
+        function editCard(id) {
+            const char = characters.find(c => c.id === id);
+            if (!char) return;
+
+            currentEditingId = char.id;
+            document.getElementById('card-id').value = char.id;
+            document.getElementById('input-name').value = char.name;
+            document.getElementById('input-role').value = char.role;
+            document.getElementById('input-category').value = char.category;
+            document.getElementById('input-trait').value = char.trait;
+            document.getElementById('input-physical').value = char.physical;
+            document.getElementById('input-desc').value = char.description;
+            document.getElementById('input-quote').value = char.quote || '';
+
+            document.getElementById('input-astuzia').value = char.astuzia;
+            document.getElementById('input-forza').value = char.forza;
+            document.getElementById('input-lealta').value = char.lealta;
+            document.getElementById('input-magia').value = char.magia || 20;
+
+            updateStatVal('astuzia');
+            updateStatVal('forza');
+            updateStatVal('lealta');
+            updateStatVal('magia');
+
+            selectedAvatarKey = char.avatarSvg || 'ulisse';
+            const allBtns = document.getElementById('avatar-selector').children;
+            for (let b of allBtns) {
+                if (b.dataset.avatarKey === selectedAvatarKey) {
+                    b.className = 'p-1.5 rounded-lg border-2 border-greek-gold bg-greek-gold/20 transition';
+                } else {
+                    b.className = 'p-1.5 rounded-lg border-2 border-slate-700 bg-slate-800 hover:border-slate-500 transition';
+                }
+            }
+
+            document.getElementById('creator-title').innerHTML = `<i class="fa-solid fa-pen"></i> Modifica Carta: ${char.name}`;
+            switchTab('creator');
+            updatePreview();
+        }
+
+        // DELETE CUSTOM CARD
+        function deleteCard(id) {
+            if (confirm("Sei sicuro di voler eliminare questa carta d'identità?")) {
+                characters = characters.filter(c => c.id !== id);
+                saveToLocalStorage();
+                renderGallery();
+            }
+        }
+
+        // RESET FORM
+        function resetForm() {
+            document.getElementById('card-form').reset();
+            document.getElementById('card-id').value = '';
+            document.getElementById('creator-title').innerHTML = `<i class="fa-solid fa-pen-ruler"></i> Crea una Nuova Carta d'Identità`;
+            selectedAvatarKey = 'ulisse';
+            setupAvatarSelector();
+            updateStatVal('astuzia');
+            updateStatVal('forza');
+            updateStatVal('lealta');
+            updateStatVal('magia');
+            updatePreview();
+        }
+
+        // FILTERS
+        function filterCategory(cat) {
+            activeCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.className = "cat-btn px-3 py-1.5 rounded-md text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700";
+            });
+            event.target.className = "cat-btn active px-3 py-1.5 rounded-md text-xs font-semibold bg-greek-gold text-slate-950 font-bold";
+            renderGallery();
+        }
+
+        function filterCards() {
+            renderGallery();
+        }
+
+        function resetFilters() {
+            document.getElementById('search-input').value = '';
+            filterCategory('all');
+        }
+
+        // PRINT SYSTEM
+        function openPrintModal() {
+            const list = document.getElementById('print-selection-list');
+            list.innerHTML = '';
+
+            characters.forEach(c => {
+                const item = document.createElement('label');
+                item.className = "flex items-center gap-3 p-2 bg-slate-800/60 rounded-lg hover:bg-slate-800 cursor-pointer border border-slate-700";
+                item.innerHTML = `
+                    <input type="checkbox" value="${c.id}" checked class="print-checkbox rounded text-greek-gold focus:ring-greek-gold w-4 h-4">
+                    <span class="font-serif font-bold text-sm text-greek-parchment">${c.name}</span>
+                    <span class="text-xs text-slate-400">(${c.role})</span>
+                `;
+                list.appendChild(item);
+            });
+
+            document.getElementById('print-modal').classList.remove('hidden');
+        }
+
+        function closePrintModal() {
+            document.getElementById('print-modal').classList.add('hidden');
+        }
+
+        function quickPrintCard(id) {
+            const char = characters.find(c => c.id === id);
+            if (!char) return;
+
+            const printGrid = document.getElementById('print-cards-grid');
+            printGrid.innerHTML = '';
+            printGrid.appendChild(createCardElementHtml(char, true));
+
+            window.print();
+        }
+
+        function triggerPrint() {
+            const checkboxes = document.querySelectorAll('.print-checkbox:checked');
+            const selectedIds = Array.from(checkboxes).map(cb => cb.value);
+
+            if (selectedIds.length === 0) {
+                alert("Seleziona almeno un personaggio da stampare.");
+                return;
+            }
+
+            const printGrid = document.getElementById('print-cards-grid');
+            printGrid.innerHTML = '';
+
+            selectedIds.forEach(id => {
+                const char = characters.find(c => c.id === id);
+                if (char) {
+                    const cardNode = createCardElementHtml(char, true);
+                    cardNode.classList.add('card-to-print');
+                    printGrid.appendChild(cardNode);
+                }
+            });
+
+            closePrintModal();
+            window.print();
+        }
+
+        // QUIZ GAME SYSTEM
+        let currentQuizIndex = 0;
+        let quizScore = 0;
+        let quizQuestions = [];
+
+        function initQuiz() {
+            quizScore = 0;
+            document.getElementById('quiz-score').innerText = quizScore;
+
+            // Generate questions based on characters
+            quizQuestions = characters.map(char => {
+                // Randomize question type
+                const types = ['trait', 'physical', 'quote'];
+                const type = types[Math.floor(Math.random() * types.length)];
+                
+                let questionText = "";
+                if (type === 'trait') {
+                    questionText = `Quale personaggio è famoso per il tratto distintivo: "<strong>${char.trait}</strong>"?`;
+                } else if (type === 'physical') {
+                    questionText = `A chi appartiene questa descrizione fisica: "<em>${char.physical}</em>"?`;
+                } else {
+                    questionText = `Chi ha pronunciato o viene associato a questa frase: "<em>${char.quote || char.description}</em>"?`;
+                }
+
+                // Options
+                const otherOptions = characters.filter(c => c.id !== char.id).sort(() => 0.5 - Math.random()).slice(0, 3);
+                const options = [char, ...otherOptions].sort(() => 0.5 - Math.random());
+
+                return {
+                    questionText,
+                    correctId: char.id,
+                    options
+                };
+            }).sort(() => 0.5 - Math.random());
+
+            currentQuizIndex = 0;
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const box = document.getElementById('quiz-box');
+            if (currentQuizIndex >= quizQuestions.length) {
+                box.innerHTML = `
+                    <div class="text-center py-8 space-y-4">
+                        <i class="fa-solid fa-trophy text-5xl text-greek-gold animate-bounce"></i>
+                        <h3 class="font-serif text-2xl font-bold text-greek-gold">Complimenti, Eroe dell'Odissea!</h3>
+                        <p class="text-slate-300">Hai completato tutte le domande con un punteggio finale di: <strong class="text-greek-gold text-xl">${quizScore} / ${quizQuestions.length}</strong></p>
+                        <button onclick="initQuiz()" class="bg-greek-gold text-slate-950 font-serif font-bold px-6 py-2.5 rounded-lg hover:bg-greek-goldHover transition">
+                            Gioca Ancora
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            const q = quizQuestions[currentQuizIndex];
+
+            box.innerHTML = `
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center text-xs text-greek-gold font-serif">
+                        <span>Domanda ${currentQuizIndex + 1} di ${quizQuestions.length}</span>
+                    </div>
+                    <p class="text-slate-100 text-base sm:text-lg font-serif leading-relaxed">${q.questionText}</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                        ${q.options.map(opt => `
+                            <button onclick="checkAnswer('${opt.id}', '${q.correctId}', this)" class="quiz-opt-btn text-left p-3 rounded-lg bg-slate-700/60 hover:bg-greek-aegeanLight/50 border border-slate-600 transition flex items-center justify-between text-sm text-slate-200">
+                                <span>${opt.name}</span>
+                                <i class="fa-regular fa-circle text-slate-400"></i>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function checkAnswer(selectedId, correctId, btnEl) {
+            const allBtns = document.querySelectorAll('.quiz-opt-btn');
+            allBtns.forEach(b => b.disabled = true);
+
+            if (selectedId === correctId) {
+                btnEl.classList.remove('bg-slate-700/60');
+                btnEl.classList.add('bg-emerald-900/80', 'border-emerald-500', 'text-white');
+                btnEl.querySelector('i').className = "fa-solid fa-circle-check text-emerald-400";
+                quizScore++;
+                document.getElementById('quiz-score').innerText = quizScore;
+            } else {
+                btnEl.classList.remove('bg-slate-700/60');
+                btnEl.classList.add('bg-red-900/80', 'border-red-500', 'text-white');
+                btnEl.querySelector('i').className = "fa-solid fa-circle-xmark text-red-400";
+
+                // Highlight correct answer
+                allBtns.forEach(b => {
+                    if (b.getAttribute('onclick').includes(`'${correctId}'`)) {
+                        b.classList.add('bg-emerald-900/40', 'border-emerald-500');
+                    }
+                });
+            }
+
+            setTimeout(() => {
+                currentQuizIndex++;
+                renderQuestion();
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
